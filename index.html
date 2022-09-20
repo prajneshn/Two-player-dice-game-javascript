@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="cong">
+        <h1 id="co1">Congratulations</h1>
+    </div>
+    
+    <h1 class="h1">Welcome All!....</h1>
+    <div class="dice">
+    <div class="d1">
+        <h2>Player1</h2>
+        <img src="1.png" alt="" class="dimg" name="image">
+        
+    </div>
+    
+    <div class="d1">
+        <h2>Player1</h2>
+        <img src="1.png" alt="" class="dimg">
+        
+        
+    </div>
+   
+    <div class="table">
+          <table>
+            <tr>
+                <td colspan="2">Score</td>
+            </tr>
+            <tr>
+                <td>Player1</td>
+                <td>Player2</td>
+            </tr>
+            <tr>
+                <td id="s1">0</td>
+                <td id="s2">0</td>
+            </tr>
+          </table>
+
+    </div>
+    
+    
+</div>
+<button id="btn" onclick="start()">start</button> 
+<script>
+    var c=0;
+    var d=0;
+function start(){
+    var a=Math.floor(Math.random()*6)+1;
+    var b=Math.floor(Math.random()*6)+1;
+     
+    var img1=a+".png";
+    var img2=b+".png";
+    document.querySelectorAll("img")[0].setAttribute("src",img1);
+    document.querySelectorAll("img")[1].setAttribute("src",img2);
+    if(img1>img2)
+    {
+        document.querySelector("h1").innerHTML="Player1 Wins";
+        c=c+1;
+        document.getElementById("s1").innerHTML=c;
+        if(c==5){
+            document.getElementById("co1").innerHTML="Player1 Won The Match";
+            document.getElementById("cong").style.display="block";
+        }
+    }
+    else if(img1<img2){
+        document.querySelector("h1").innerHTML="Player2 Wins";
+        d=d+1;
+        document.getElementById("s2").innerHTML=d;
+        if(d==5){
+            document.getElementById("co1").innerHTML="Player2 Won The Match";
+            document.getElementById("cong").style.display="block";
+
+        
+        }
+    
+    }
+    else{
+        document.querySelector().innerHTML="Draw";
+    }
+
+}
+</script>
+</body>
+</html>
